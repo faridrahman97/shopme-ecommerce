@@ -14,13 +14,13 @@ import Footer from "./components/Footer";
 import NotFound from "./pages/NotFound";
 import CartPage from "./pages/CartPage";
 import PurchaseSuccess from "./pages/PurchaseSuccess";
+import { isMobile } from "react-device-detect";
 
 function App() {
-  console.log(import.meta.env.NODE_ENV);
   const { user, authorize, checkingAuth } = useUserStore();
   const { getCartItems } = useCartStore();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(isMobile);
+  const [isMobileState, setIsMobileState] = useState(isMobile);
 
   useEffect(() => {
     authorize();
@@ -31,16 +31,15 @@ function App() {
     getCartItems();
   }, [getCartItems, user]);
 
-  const handleResize = () => {
-    if (window.innerWidth < 768) {
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
-      setMobileMenuOpen(false);
-    }
-  };
-
   useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768 && !isMobileState) {
+        setIsMobileState(true);
+      } else {
+        setIsMobileState(false);
+      }
+    };
+
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -63,7 +62,7 @@ function App() {
 
       <div className="relative z-50">
         <Navbar
-          isMobile={isMobile}
+          isMobile={isMobileState}
           mobileMenuOpen={mobileMenuOpen}
           handleMobileMenuOpen={handleMobileMenuOpen}
         />
