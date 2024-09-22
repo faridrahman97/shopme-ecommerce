@@ -19,7 +19,7 @@ import { isMobile } from "react-device-detect";
 function App() {
   const { user, authorize, checkingAuth } = useUserStore();
   const { getCartItems } = useCartStore();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(isMobile);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isMobileState, setIsMobileState] = useState(isMobile);
 
   useEffect(() => {
@@ -33,11 +33,8 @@ function App() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768 && !isMobileState) {
-        setIsMobileState(true);
-      } else {
-        setIsMobileState(false);
-      }
+      if (!isMobile && window.innerWidth < 768) setIsMobileState(true);
+      else setIsMobileState(isMobile);
     };
 
     window.addEventListener("resize", handleResize);
