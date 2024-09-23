@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import useTitle from "../hooks/useTitle";
 
 const NotFound = () => {
-  useTitle("Not Found");
+  useTitle("SHOPME - Not Found");
   return (
     <section className="p-5 tracking-wider min-h-screen flex flex-col justify-center">
       <h2 className="text-center text-3xl font-extrabold text-slate-400">

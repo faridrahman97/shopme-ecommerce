@@ -7,7 +7,7 @@ import useUserStore from "../stores/useUserStore";
 import useTitle from "../hooks/useTitle";
 
 const SignUpPage = () => {
-  useTitle("Sign Up");
+  useTitle("SHOPME - Sign Up");
   const [formData, setFormData] = useState({
     name: "",
     email: "",

@@ -17,7 +17,7 @@ const categories = [
 ];
 
 const HomePage = () => {
-  useTitle("Home");
+  useTitle("SHOPME");
   const { getFeaturedProducts, products, isLoading } = useProductStore();
 
   useEffect(() => {

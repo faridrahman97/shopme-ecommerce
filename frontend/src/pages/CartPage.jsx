@@ -9,7 +9,7 @@ import EmptyCartUI from "../components/EmptyCartUI";
 import useTitle from "../hooks/useTitle";
 
 const CartPage = () => {
-  useTitle("Cart");
+  useTitle("SHOPME - Cart");
   const { cart, clearCart } = useCartStore();
   return (
     <section className="pt-24 min-h-screen lg:py-24">

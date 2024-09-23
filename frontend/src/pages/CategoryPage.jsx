@@ -6,10 +6,9 @@ import ProductCard from "../components/ProductCard";
 import useTitle from "../hooks/useTitle";
 
 const CategoryPage = () => {
+  useTitle(`SHOPME - ${category.charAt(0).toUpperCase() + category.slice(1)}`);
   const { fetchProductsByCategory, products } = useProductStore();
   const { category } = useParams();
-
-  useTitle(`${category.charAt(0).toUpperCase() + category.slice(1)}`);
 
   React.useEffect(() => {
     fetchProductsByCategory(category);

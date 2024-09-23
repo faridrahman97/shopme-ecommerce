@@ -7,7 +7,7 @@ import useUserStore from "../stores/useUserStore";
 import useTitle from "../hooks/useTitle";
 
 const LoginPage = () => {
-  useTitle("Login");
+  useTitle("SHOPME - Login");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 

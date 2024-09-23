@@ -8,7 +8,7 @@ import Confetti from "react-confetti";
 import useTitle from "../hooks/useTitle";
 
 const PurchaseSuccess = () => {
-  useTitle("Payment Success");
+  useTitle("SHOPME - Payment Success");
   const [isProcessing, setIsProcessing] = useState(true);
   const { clearCart } = useCartStore();
   const [error, setError] = useState(null);

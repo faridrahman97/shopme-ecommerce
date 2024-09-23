@@ -14,7 +14,7 @@ const tabs = [
   { name: "analytics", label: "View Analytics", icon: BarChart },
 ];
 const AdminPage = () => {
-  useTitle("Admin Dashboard");
+  useTitle("SHOPME - Admin Dashboard");
   const [activeTab, setActiveTab] = useState("create");
   const { fetchAllProducts } = useProductStore();
 
